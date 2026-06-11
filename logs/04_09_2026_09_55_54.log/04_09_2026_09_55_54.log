@@ -1,0 +1,42 @@
+[2026-04-09 09:55:56,518] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.11.23.94:10000
+[2026-04-09 09:55:56,519] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2026-04-09 09:57:11,159] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2026 09:57:11] "GET / HTTP/1.1" 200 -
+[2026-04-09 09:57:11,252] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2026 09:57:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2026-04-09 09:57:31,113] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2026 09:57:31] "GET /predict_datapoint HTTP/1.1" 200 -
+[2026-04-09 09:57:52,579] 875 application - ERROR - Exception on /predict_datapoint [POST]
+Traceback (most recent call last):
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\utils.py", line 60, in load_object
+    with open(file_path,'rb') as file_obj:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/model.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\pipeline\predict_pipeline.py", line 15, in predict
+    model = load_object(file_path = model_file)
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\utils.py", line 63, in load_object
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\utils.py] line number [60] error message[[Errno 2] No such file or directory: 'artifacts/model.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\application.py", line 32, in predict_dataPoint
+    results = predict_pipeline.predict(pred_df)
+  File "C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\pipeline\predict_pipeline.py", line 22, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\pipeline\predict_pipeline.py] line number [15] error message[Error occured in python script name [C:\Users\Daksh Jain\OneDrive\Desktop\Student-Performance-Predictor--main\Student-Performance-Predictor--main\src\utils.py] line number [60] error message[[Errno 2] No such file or directory: 'artifacts/model.pkl']]
+[2026-04-09 09:57:52,599] 97 werkzeug - INFO - 127.0.0.1 - - [09/Apr/2026 09:57:52] "[35m[1mPOST /predict_datapoint HTTP/1.1[0m" 500 -
