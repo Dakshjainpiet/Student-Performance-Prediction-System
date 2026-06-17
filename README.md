@@ -125,7 +125,43 @@ Student-Performance-Predictor/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/Dakshjainpiet/Student-Performance-Prediction-System.git
+git clone https://github.com/dakshjain02/Student-Performance-Analyzer.git
+```
+
+### 2️⃣ Navigate to Project Directory
+
+```bash
+cd Student-Performance-Prediction-System
+```
+
+### 3️⃣ Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4️⃣ Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+### 5️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6️⃣ Run Application
+
+```bash
+python application.py
+```
+
+### 7️⃣ Open Browser
+
+```text
+http://127.0.0.1:5000
 ```
 
 ---
@@ -158,5 +194,10 @@ git clone https://github.com/Dakshjainpiet/Student-Performance-Prediction-System
 
 **Daksh Jain**
 
+B.Tech – Artificial Intelligence & Data Science
+
+Machine Learning | Python | Data Science | Flask Development
+
 ---
 
+⭐ If you found this project useful, consider giving it a star.
